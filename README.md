@@ -1,3 +1,5 @@
 # wplant_junior
 
-App used for educational lab, part of the Watchplant project
+Flutter App used for educational lab, part of the Watchplant project
+
+Created with ❤️ at FER.
