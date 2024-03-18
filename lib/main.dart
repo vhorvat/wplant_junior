@@ -7,6 +7,7 @@ import 'package:wplant_junior/src/ble/ble_status_monitor.dart';
 import 'package:wplant_junior/src/ui/ble_status_screen.dart';
 import 'package:wplant_junior/src/ui/device_list.dart';
 import 'package:provider/provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 
 import 'src/ble/ble_logger.dart';
@@ -78,6 +79,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Consumer<BleStatus?>(
         builder: (_, status, __) {
+
+          _requestPermissions();
           if (status == BleStatus.ready) {
             return const DeviceListScreen();
           } else {
@@ -85,4 +88,12 @@ class HomeScreen extends StatelessWidget {
           }
         },
       );
+}
+
+Future<void> _requestPermissions() async {
+  // Request Bluetooth permission
+  await Permission.bluetooth.request();
+  await Permission.bluetoothScan.request();
+  await Permission.bluetoothConnect.request();
+  await Permission.location.request();
 }
