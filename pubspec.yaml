@@ -67,6 +67,11 @@ flutter:
     - assets/logoi.png
     - assets/light_icon.png
     - assets/moisture_icon.png
+    - assets/ph.png
+    - assets/thermometer.png
+    - assets/humidity.png
+    - assets/humidity1.png
+    - assets/idea.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
